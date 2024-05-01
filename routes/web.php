@@ -5,10 +5,10 @@ use App\Http\Controllers\AuthController;
 
 // Get Method
 Route::view('/', 'index', ['title' => 'Home'])->name('home');
-Route::view('/register', 'register-form')->name('register');
-Route::view('/login', 'login-form')->name('login');
-Route::view('/posts', 'posts')->name('posts')->middleware('auth');
-Route::view('/profile', 'profile')->name('profile');
+Route::view('/register', 'register-form', ['title' => 'Register'])->name('register');
+Route::view('/login', 'login-form', ['title' => 'Login'])->name('login');
+Route::view('/posts', 'posts', ['title' => 'Blog'])->name('posts')->middleware('auth');
+Route::view('/profile', 'profile', ['title' => 'Profile'])->name('profile');
 
 
 // Post Method

@@ -1,5 +1,3 @@
-@extends('layout.app')
-
-@section('main')
-    
-@endsection
+<x-layout>
+    <x-slot:title>{{ $title }}</x-slot:title>
+</x-layout>
