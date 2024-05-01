@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Blog;
 
 class PostController extends Controller
 {
@@ -11,7 +12,11 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        $all = Blog::all();
+        return view('posts', [
+            "title" => 'Blog',
+            "data" => $all
+        ]);
     }
 
     /**
@@ -19,7 +24,9 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('store-form', [
+            'title' => 'Post'
+        ]);
     }
 
     /**
@@ -27,7 +34,16 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validate = $request->validate([
+            'title' => ['required'],
+            'desc' => ['required']
+        ]);
+
+        $validate['user_id'] = auth()->user()->id;
+
+        Blog::create($validate);
+
+        return redirect()->route('profile');
     }
 
     /**

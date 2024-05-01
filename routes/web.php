@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\PostController;
 
 
 // Default
@@ -9,10 +10,8 @@ Route::view('/', 'index', ['title' => 'Home'])->name('home');
 
 // Auth group
 Route::middleware('auth')->group(function() {
-    // Get Method
-    Route::view('/posts', 'posts', ['title' => 'Blog'])->name('posts');
     Route::view('/profile', 'profile', ['title' => 'Profile'])->name('profile');
-
+    Route::resource('posts', PostController::class);
     // Post Method
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });

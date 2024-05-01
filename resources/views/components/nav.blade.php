@@ -12,7 +12,7 @@
                         <a href="{{ Route('home') }}"
                             class="  rounded-md px-3 py-2 text-sm font-medium {{ $slot == 'Home' ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }}"
                             aria-current="page">Home</a>
-                        <a href="{{ Route('posts') }}"
+                        <a href="{{ Route('posts.index') }}"
                             class="{{ $slot == 'Blog' ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} rounded-md px-3 py-2 text-sm font-medium">Blog</a>
                         <a href="#"
                             class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">About</a>
@@ -104,7 +104,7 @@
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
             <a href="#" class="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium"
                 aria-current="page">Dashboard</a>
-            <a href="{{ Route('posts') }}"
+            <a href="/posts"
                 class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Post</a>
             <a href="#"
                 class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">About</a>
