@@ -2,7 +2,8 @@
     <x-slot:title>{{ $title }}</x-slot:title>
     <div class="m-5 flex justify-end">
         <a href="{{ Route('posts.create') }}"><button type="button"
-                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Default</button></a>
+                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">New
+                Post</button></a>
     </div>
     <div class="flex justify-center flex-wrap">
         @foreach ($data as $post)

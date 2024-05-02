@@ -3,14 +3,14 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PostController;
-
+use App\Http\Controllers\ProfileController;
 
 // Default
 Route::view('/', 'index', ['title' => 'Home'])->name('home');
 
 // Auth group
 Route::middleware('auth')->group(function() {
-    Route::view('/profile', 'profile', ['title' => 'Profile'])->name('profile');
+    Route::view('/profile', 'profile',['title' => 'Profile'])->name('profile');
     Route::resource('posts', PostController::class);
     // Post Method
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
